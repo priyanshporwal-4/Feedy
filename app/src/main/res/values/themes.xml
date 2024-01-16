@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Feedy" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/red</item>
+        <item name="android:navigationBarColor">@color/red</item>
+<!--        <item name="android:windowLightStatusBar">true</item>-->
+    </style>
+
+    <style name="Theme.Feedy" parent="Base.Theme.Feedy" />
+</resources>

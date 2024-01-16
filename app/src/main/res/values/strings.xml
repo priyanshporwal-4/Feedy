@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Feedy</string>
+    <string name="app_name_capital">FEEDY</string>
+    <string name="welcome">Welcome!</string>
+    <string name="donate">Donate Food</string>
+    <string name="receive">Receive Food</string>
+    <string name="donate_or_search_for_availbale_food">Donate or search for availbale food.</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="relocate">relocate</string>
+    <string name="choose">Choose</string>
+    <string name="current">Current</string>
+    <string name="please_fill_out_the_details">Please fill out the details</string>
+    <string name="clouds">clouds</string>
+    <string name="tag_line">Serve or be served</string>
+    <string name="back">Back</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="welcome_let_s_create_a_better_world">WELCOME! LET\'S CREATE A BETTER WORLD</string>
+    <string name="log_in_or_sign_up">Login</string>
+    <string name="next">Next</string>
+    <string name="submit">Submit</string>
+    <string name="items">Food Items Separated With (,)</string>
+</resources>

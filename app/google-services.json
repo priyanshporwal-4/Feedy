@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1026064882664",
+    "project_id": "feedy-5ad0a",
+    "storage_bucket": "feedy-5ad0a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026064882664:android:5b41b93b6a83276501225d",
+        "android_client_info": {
+          "package_name": "com.converter.feedy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCu41tZOipO38CZVyGHsZcz9KfLWQDEFa4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

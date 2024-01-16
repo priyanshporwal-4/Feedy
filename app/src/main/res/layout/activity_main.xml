@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/blueberry_regular"
+            android:text="@string/app_name_capital"
+            android:textColor="@color/red"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/logout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/logout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="110dp"
+        android:layout_height="175dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/left_bg" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="110dp"
+        android:layout_height="175dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/right_bg" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/blueberry_regular"
+        android:letterSpacing="0.15"
+        android:text="@string/welcome"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+
+        <LinearLayout
+            android:id="@+id/donate"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@drawable/donate_button"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_regular"
+                android:text="@string/donate"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/donateImageButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="150dp"
+                android:background="@drawable/donate_button_bg" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/recieve"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/reciever_button"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_regular"
+                android:text="@string/receive"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/recieveImageButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="150dp"
+                android:background="@drawable/receiver_button_bg" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/left_bot" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/font_regular"
+        android:gravity="center"
+        android:text="@string/donate_or_search_for_availbale_food"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
