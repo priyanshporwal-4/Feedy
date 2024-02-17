@@ -56,7 +56,7 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
         binding = ActivityLocationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        fStore = FirebaseFirestore.getInstance();
+//        fStore = FirebaseFirestore.getInstance();
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         getLastLocation();
         //request coordinates
@@ -94,18 +94,24 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
         coordinates = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
         mMap.addMarker(new MarkerOptions().position(coordinates).title("My Location"));
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(coordinates, 17f));
-        fStore.collection("requests").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    for (QueryDocumentSnapshot document : task.getResult()) {
-                        mMap.addMarker(new MarkerOptions().position(new LatLng(Double.parseDouble((String) document.getData().get("latitude")),
-                                        Double.parseDouble((String) document.getData().get("longitude"))))
-                                .title(document.getData().get("name") + "\n" + document.getData().get("phone") + "\n" + document.getData().get("quantity") + "\n" + document.getData().get("expiry")));
-                    }
-                }
-            }
-        });
+
+        String stringLatitude = getIntent().getStringExtra("latitude");
+        String stringLongitude = getIntent().getStringExtra("longitude");
+
+        mMap.addMarker(new MarkerOptions().position(new LatLng(Double.parseDouble(stringLatitude), Double.parseDouble(stringLongitude))).title("Food Location"));
+
+//        fStore.collection("requests").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//            @Override
+//            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                if (task.isSuccessful()) {
+//                    for (QueryDocumentSnapshot document : task.getResult()) {
+//                        mMap.addMarker(new MarkerOptions().position(new LatLng(Double.parseDouble((String) document.getData().get("latitude")),
+//                                        Double.parseDouble((String) document.getData().get("longitude"))))
+//                                .title(document.getData().get("name") + "\n" + document.getData().get("phone") + "\n" + document.getData().get("quantity") + "\n" + document.getData().get("expiry")));
+//                    }
+//                }
+//            }
+//        });
     }
 
 

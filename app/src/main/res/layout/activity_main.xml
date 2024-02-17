@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:id="@+id/main"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -33,6 +34,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/logout"
+            android:contentDescription="logout"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -106,7 +108,8 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="150dp"
-                android:background="@drawable/donate_button_bg" />
+                android:background="@drawable/donate_button_bg"
+                android:contentDescription="@string/donate" />
 
         </LinearLayout>
 
@@ -133,7 +136,8 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="150dp"
-                android:background="@drawable/receiver_button_bg" />
+                android:background="@drawable/receiver_button_bg"
+                android:contentDescription="@string/receive" />
         </LinearLayout>
 
 

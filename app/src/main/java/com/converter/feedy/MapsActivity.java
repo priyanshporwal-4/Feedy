@@ -34,12 +34,7 @@ import com.google.android.gms.tasks.Task;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
-    private ActivityMapsBinding binding;
     private FusedLocationProviderClient fusedLocationClient;
-    private ImageButton current;
-    private LatLng coordinates;
-    private TextView submit;
     private Location currentLocation;
     private double latitude;
     private double longitude;
@@ -49,12 +44,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMapsBinding.inflate(getLayoutInflater());
+        com.converter.feedy.databinding.ActivityMapsBinding binding = ActivityMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
-        current = findViewById(R.id.current);
+        ImageButton current = findViewById(R.id.current);
         current.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +57,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
-        submit = findViewById(R.id.submit);
+        TextView submit = findViewById(R.id.submit);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,12 +100,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
         latitude = currentLocation.getLatitude();
         longitude = currentLocation.getLongitude();
-        coordinates = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
-        mMap.addMarker(new MarkerOptions().position(coordinates).title("My Location"));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(coordinates, 17f));
+        LatLng coordinates = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
+        googleMap.addMarker(new MarkerOptions().position(coordinates).title("My Location"));
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(coordinates, 17f));
     }
 
 

@@ -68,6 +68,10 @@ public class FoodDetailsActivity extends AppCompatActivity {
                 String quantity = quantityEdit.getText().toString();
                 String expiry = expiryEdit.getText().toString();
                 String foodItems = foodItemsEdit.getText().toString();
+                if (Integer.parseInt(expiry) > 9) {
+                    Toast.makeText(FoodDetailsActivity.this, "Expiry duration cannot be more then 9 Hours", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 if (!isValid(quantity, expiry, foodItems)) {
                     addInDatabaseConsole(quantity, expiry, foodItems, lat, lang, userID, name, phone);
                 } else {

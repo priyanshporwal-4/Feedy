@@ -17,6 +17,16 @@
         android:theme="@style/Theme.Feedy"
         tools:targetApi="31">
         <activity
+            android:name=".ReceiveActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
             android:name=".LocationActivity"
             android:exported="false" />
         <activity
@@ -24,7 +34,9 @@
             android:exported="false" />
         <activity
             android:name=".FoodDetailsActivity"
-            android:exported="false" />
+            android:exported="false">
+
+        </activity>
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
@@ -45,15 +57,16 @@
             android:exported="false" />
         <activity
             android:name=".MapsActivity"
-            android:exported="false"
-            android:label="@string/title_activity_maps" />
+            android:exported="false">
+
+        </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="API_KEY_HERE" />
+            android:value="Your_api_key" />
     </application>
 
 </manifest>

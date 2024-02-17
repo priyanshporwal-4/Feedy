@@ -96,7 +96,7 @@ public class SignupActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Toast.makeText(SignupActivity.this, "You are Registered", Toast.LENGTH_SHORT).show();
                             userID = fauth.getCurrentUser().getUid();
-                            addInFireStore(name, phone, email, userID);
+                            addInFireStore(name, phone, email, userID, password);
                             progressBar.setVisibility(View.INVISIBLE);
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             finish();
@@ -120,11 +120,12 @@ public class SignupActivity extends AppCompatActivity {
 
     }
 
-    private void addInFireStore(String name, String phone, String email, String userID) {
+    private void addInFireStore(String name, String phone, String email, String userID, String password) {
         Map<String, Object> userData = new HashMap<>();
         userData.put("name", name);
         userData.put("phone", phone);
         userData.put("email", email);
+        userData.put("password", password);
 
         FirebaseFirestore.getInstance().collection("users").document(userID).set(userData).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
