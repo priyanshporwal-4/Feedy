@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity {
 
     private LinearLayout donate, recieve;
-    private ImageButton donateButton, recieveButton, logoutButton;
+    private ImageButton donateButton, recieveButton, logoutButton, geminiButton, receiveListButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +36,26 @@ public class MainActivity extends AppCompatActivity {
         recieve = findViewById(R.id.recieve);
         recieveButton = findViewById(R.id.recieveImageButton);
         logoutButton = findViewById(R.id.logout);
+        receiveListButton = findViewById(R.id.receive_list);
+        geminiButton = findViewById(R.id.gemini_button);
+
+
+
+        receiveListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ReceiveActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        geminiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), GeminiActivity.class));
+            }
+        });
 
         donate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +76,9 @@ public class MainActivity extends AppCompatActivity {
         recieve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ReceiveActivity.class);
+                Intent intent = new Intent(MainActivity.this, LocationActivity.class);
+                intent.putExtra("latitude", "");
+                intent.putExtra("longitude", "");
                 startActivity(intent);
             }
         });
@@ -64,7 +86,9 @@ public class MainActivity extends AppCompatActivity {
         recieveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ReceiveActivity.class);
+                Intent intent = new Intent(MainActivity.this, LocationActivity.class);
+                intent.putExtra("latitude", "");
+                intent.putExtra("longitude", "");
                 startActivity(intent);
             }
         });

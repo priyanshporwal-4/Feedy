@@ -44,10 +44,9 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
     private ActivityLocationBinding binding;
     private FusedLocationProviderClient fusedLocationClient;
     private LatLng coordinates;
-
     private Location currentLocation;
-    FirebaseFirestore fStore;
     private final static int FINE_PERMISSION_CODE = 1;
+    private FirebaseFirestore fStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +55,7 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
         binding = ActivityLocationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-//        fStore = FirebaseFirestore.getInstance();
+        fStore = FirebaseFirestore.getInstance();
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         getLastLocation();
         //request coordinates
@@ -93,25 +92,31 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
         mMap = googleMap;
         coordinates = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
         mMap.addMarker(new MarkerOptions().position(coordinates).title("My Location"));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(coordinates, 17f));
 
         String stringLatitude = getIntent().getStringExtra("latitude");
         String stringLongitude = getIntent().getStringExtra("longitude");
+//
 
-        mMap.addMarker(new MarkerOptions().position(new LatLng(Double.parseDouble(stringLatitude), Double.parseDouble(stringLongitude))).title("Food Location"));
 
-//        fStore.collection("requests").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-//            @Override
-//            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-//                if (task.isSuccessful()) {
-//                    for (QueryDocumentSnapshot document : task.getResult()) {
-//                        mMap.addMarker(new MarkerOptions().position(new LatLng(Double.parseDouble((String) document.getData().get("latitude")),
-//                                        Double.parseDouble((String) document.getData().get("longitude"))))
-//                                .title(document.getData().get("name") + "\n" + document.getData().get("phone") + "\n" + document.getData().get("quantity") + "\n" + document.getData().get("expiry")));
-//                    }
-//                }
-//            }
-//        });
+        if (stringLatitude.isEmpty()) {
+
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(coordinates, 17f));
+
+            fStore.collection("requests").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        mMap.addMarker(new MarkerOptions().position(new LatLng(Double.parseDouble((String) document.getData().get("latitude")),
+                                        Double.parseDouble((String) document.getData().get("longitude"))))
+                                .title("Food"));
+                    }
+                }
+            }
+        });} else {
+            mMap.addMarker(new MarkerOptions().position(new LatLng(Double.parseDouble(stringLatitude), Double.parseDouble(stringLongitude))).title("Food Location"));
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(stringLatitude), Double.parseDouble(stringLongitude)), 17f));
+        }
     }
 
 
