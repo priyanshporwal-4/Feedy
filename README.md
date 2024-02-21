@@ -37,6 +37,8 @@ Instead of `"Your_Api_Key"` in meta-data tag
 
 This step is added for security reasons
 
+### 5. Now you are ready to run the Application!
+
 ## Overview
 
 Welcome to Feedy, a food donation app designed to contribute towards achieving the United Nations Sustainable Development Goal of No Hunger (SDG 2). Feedy facilitates the donation of surplus food from individuals and businesses to those in need, fostering a community-driven approach to reduce food waste and combat hunger.
