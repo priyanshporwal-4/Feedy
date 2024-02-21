@@ -41,7 +41,7 @@ This step is added for security reasons
 
 ## Overview
 
-Welcome to Feedy, a food donation app designed to contribute towards achieving the United Nations Sustainable Development Goal of No Hunger (SDG 2). Feedy facilitates the donation of surplus food from individuals and businesses to those in need, fostering a community-driven approach to reduce food waste and combat hunger.
+Welcome to Feedy, a food donation app designed to contribute towards achieving the United Nations Sustainable Development Goal of Zero Hunger (SDG 2). Feedy facilitates the donation of surplus food from individuals and businesses to those in need, fostering a community-driven approach to reduce food waste and combat hunger.
 
 ## 1. Advantages Supporting SDG 2: No Hunger
 
