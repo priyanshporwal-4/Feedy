@@ -11,14 +11,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
     private LinearLayout donate, recieve;
-    private ImageButton donateButton, recieveButton, logoutButton, geminiButton, receiveListButton;
+    TextView dashboardButton;
+    private ImageButton donateButton, recieveButton, geminiButton, receiveListButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +38,13 @@ public class MainActivity extends AppCompatActivity {
         donateButton = findViewById(R.id.donateImageButton);
         recieve = findViewById(R.id.recieve);
         recieveButton = findViewById(R.id.recieveImageButton);
-        logoutButton = findViewById(R.id.logout);
+        dashboardButton = findViewById(R.id.dashboard);
         receiveListButton = findViewById(R.id.receive_list);
         geminiButton = findViewById(R.id.gemini_button);
 
+        char firstLetter = (FirebaseAuth.getInstance().getCurrentUser().getEmail().toString()).charAt(0);
+
+        dashboardButton.setText(Character.toString(firstLetter).toUpperCase());
 
 
         receiveListButton.setOnClickListener(new View.OnClickListener() {
@@ -93,14 +99,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        logoutButton.setOnClickListener(new View.OnClickListener() {
+        dashboardButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut(); //logout current user
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
                 finish();
             }
         });
+
+
 
 
     }

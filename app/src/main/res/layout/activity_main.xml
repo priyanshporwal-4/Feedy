@@ -29,11 +29,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/logout"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/logout"
+        <TextView
+            android:id="@+id/dashboard"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/profile_background"
+            android:text="D"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:fontFamily="@font/font_regular"
+            android:textSize="20sp"
+            android:gravity="center"
             android:contentDescription="@string/logout"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
