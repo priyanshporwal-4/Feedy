@@ -4,7 +4,7 @@
 
 ### Software Requirement
 
-`Android Studio Jellyfish | 2023.3.1 Canary 12`
+`Android Studio Jellyfish | 2023.3.1 Beta 2`
 
 ### 1. Create API Key for Gemini
 Visit [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey) to create an API key for Gemini.
