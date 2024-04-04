@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class DashboardActivity extends AppCompatActivity {
 
     private TextView profileTextView, name;
-    private CardView logoutButton;
+    private CardView logoutButton, profileButton, donateButton, donationButton, emergencyButton;
     private ImageButton back;
 
     @Override
@@ -37,6 +38,10 @@ public class DashboardActivity extends AppCompatActivity {
         name = findViewById(R.id.name);
         logoutButton = findViewById(R.id.logout);
         back = findViewById(R.id.back);
+        profileButton = findViewById(R.id.profile);
+        donateButton = findViewById(R.id.donate);
+        donationButton = findViewById(R.id.donations);
+        emergencyButton = findViewById(R.id.emergency);
 
         char firstLetter = (FirebaseAuth.getInstance().getCurrentUser().getEmail().toString()).charAt(0);
         profileTextView.setText(Character.toString(firstLetter).toUpperCase());
@@ -57,6 +62,34 @@ public class DashboardActivity extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut(); //logout current user
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 finish();
+            }
+        });
+
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(DashboardActivity.this, "This feature will be available soon", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        donateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(DashboardActivity.this, "This feature will be available soon", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        donationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(DashboardActivity.this, "This feature will be available soon", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        emergencyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(DashboardActivity.this, "This feature will be available soon", Toast.LENGTH_SHORT).show();
             }
         });
 
